@@ -32,15 +32,15 @@ REDIS_PORT=6379
 
 exit  
 
-进入mysql容器
+进入mysql容器  
 docker-compose exec mysql bash  
 mysql -uroot -pFZ123456   
 执行  
 CREATE DATABASE laravel;  
 exit  
 
-开启8082端口(测试环境里80已经有nginx)  
-firewall-cmd --zone=public --add-port=8082/tcp --permanent  
+开启8082端口(测试环境里80已经有nginx)  
+firewall-cmd --zone=public --add-port=8082/tcp --permanent  
 systemctl restart firewalld.service  
 访问本机8082端口  
 
