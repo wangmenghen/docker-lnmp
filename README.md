@@ -11,8 +11,12 @@ docker-compose exec php-fpm bash  
 laravel new starter  
 cd starter  
 php artisan make:Auth   
-php artisan migrate  
+php artisan migrate  
+composer update  
+exit  
 
+
+在www下同名laravel过程下  
 vim .env  
 数据库设置  
 DB_CONNECTION=mysql  
@@ -30,12 +34,14 @@ REDIS_HOST=redis
 REDIS_PASSWORD=123456  
 REDIS_PORT=6379  
 
-exit  
-
 开启8082端口(测试环境里80已经有nginx)  
+开启8083端口(用于反向代理到百度)  
 firewall-cmd --zone=public --add-port=8082/tcp --permanent  
+firewall-cmd --zone=public --add-port=8083/tcp --permanent  
 systemctl restart firewalld.service  
-访问本机8082端口  
+访问本机8082端口,实现登录  
+访问本机8083端口,跳转到百度  
+
 
 
 
