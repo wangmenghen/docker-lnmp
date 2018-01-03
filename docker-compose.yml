@@ -4,11 +4,11 @@ services:
     build: ./docker/nginx
 #    image: nginx 
     ports:
-      - "8082:80"
-      - "1443:443"
+      - "${NGINX_PORT}:80"
+      - "${SSH_PORT}:443"
     volumes:
       - ./docker/nginx:/etc/nginx
-      - ./www:/var/www
+      - ${WORKSPACE}:/var/www
   php-fpm:
     build: ./docker/php
 #    image: php:7.2.0-fpm-alpine3.7
