@@ -21,6 +21,7 @@ services:
     ports:
       - "3305:3306"
     environment:
+      - MYSQL_DATABASE=laravel
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=admin
       - MYSQL_ROOT_PASSWORD=FZ123456
