@@ -23,9 +23,9 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_DATABASE=laravel
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=admin
-      - MYSQL_ROOT_PASSWORD=FZ123456
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
     volumes:
       - ./data/mysql:/var/lib/mysql
   redis:
