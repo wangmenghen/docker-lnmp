@@ -6,7 +6,7 @@ services:
     ports:
       - "${NGINX_PORT}:80"
       - "${SSH_PORT}:443"
-      - "8083:81"
+      - "81:81"
     volumes:
       - ./docker/nginx:/etc/nginx
       - ${WORKSPACE}:/var/www
@@ -20,7 +20,7 @@ services:
   mysql:
     image: mysql
     ports:
-      - "3305:3306"
+      - "3306:3306"
     environment:
       - MYSQL_DATABASE=laravel
       - MYSQL_USER=admin
@@ -32,7 +32,7 @@ services:
     build: ./docker/redis
 #    image: redis
     ports:
-      - "16379:6379"
+      - "6379:6379"
     volumes:
       - ./data/redis:/data
       - ./docker/redis:/etc/redis
